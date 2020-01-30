@@ -1,0 +1,44 @@
+I downloaded WAMP, logged in with root and did:
+
+CREATE DATABASE db;
+
+USE db;
+
+CREATE TABLE users(
+    id INT(6) AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(30) NOT NULL,
+    password VARCHAR(30) NOT NULL,
+    name VARCHAR(50)
+);
+
+CREATE TABLE articles(
+    id INT(6) AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(256),
+    content VARCHAR(1024),
+    authorId INT(6),
+    FOREIGN KEY (authorId) REFERENCES users(id)
+);
+
+INSERT INTO users VALUES(null, 'user1', 'password1', 'Marius');
+INSERT INTO users VALUES(null, 'user2', 'password2', 'John');
+
+INSERT INTO articles VALUES(
+    null,
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, soluta.', 
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sunt recusandae possimus rerum impedit cumque nobis minima, facilis animi assumenda alias? Eius nam esse qui accusamus enim deleniti, quae dolorem ullam. Quo cupiditate nihil ut voluptatibus quia obcaecati animi, numquam recusandae rem sunt facere velit alias minima aspernatur, et temporibus?', 
+    1
+);
+
+INSERT INTO articles VALUES(
+    null,
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, soluta.', 
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident sunt recusandae possimus rerum impedit cumque nobis minima, facilis animi assumenda alias? Eius nam esse qui accusamus enim deleniti, quae dolorem ullam. Quo cupiditate nihil ut voluptatibus quia obcaecati animi, numquam recusandae rem sunt facere velit alias minima aspernatur, et temporibus?', 
+    2
+);
+
+INSERT INTO articles VALUES(
+    null,
+    'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, soluta.', 
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ex, provident aliquid numquam dignissimos repellat adipisci similique amet deleniti, quaerat corporis suscipit culpa veritatis illo quae itaque incidunt? Quisquam assumenda beatae eligendi recusandae repudiandae eveniet veritatis rem consequuntur, velit magnam quas temporibus expedita dolor sed enim aliquam quam. Explicabo, inventore!', 
+    1
+);
