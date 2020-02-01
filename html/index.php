@@ -1,11 +1,11 @@
-<?php
-require_once ('../classes/DBConnection.php');
-$db = new DBConnection('mySettings.ini');
-?>
 <html>
 <body>
-<pre>
-<?php require_once ('../README.md');?>
-</pre>
+    <pre>
+        <form action="login.php" method="post">
+            Username: <input type="text" name="username"><br>
+            Password: <input type="password" name="password"><br>
+            <input type="submit">
+        </form>
+    </pre>
 </body>
 </html>
